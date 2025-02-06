@@ -31,7 +31,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: temurin
-          java-version: 22
+          java-version: 18
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
@@ -41,6 +41,9 @@ jobs:
           cd mytv-android
           bash gradlew
 
+      - name: Show Output
+        run: |
+          find app -type f
       - name: Get Commit Messages
         id: get_git_latest_message
         run: |
