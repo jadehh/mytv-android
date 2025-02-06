@@ -39,7 +39,7 @@ jobs:
       - name: Build with Gradle
         run: |
           cd mytv-android
-          bash gradlew assembleRelease 
+          bash gradlew assembleDebug 
 
       - name: Show Output
         run: |
