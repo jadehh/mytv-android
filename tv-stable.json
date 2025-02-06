@@ -1,0 +1,9 @@
+{
+  "tag_name": "v2.2.6",
+  "assets": [
+    {
+      "browser_download_url": "https://github.com/jadehh/mytv-android/releases/download/v2.2.6/mytv-android-tv-2.2.6-all-sdk21.apk"
+    }
+  ],
+  "body": "## [2.2.6] - 2025-02-06\n\n### 优化\n\n- 优化默认源\n- 默认使用经典选台界面"
+}

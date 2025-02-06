@@ -39,11 +39,7 @@ jobs:
       - name: Build with Gradle
         run: |
           cd mytv-android
-          bash gradlew assembleDebug 
-
-      - name: Show Output
-        run: |
-          find mytv-android -type f
+          bash gradlew assembleDebug
       - name: Get Commit Messages
         id: get_git_latest_message
         run: |

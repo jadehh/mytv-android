@@ -17,7 +17,12 @@ object Constants {
     /**
      * 应用 代码仓库
      */
-    const val APP_REPO = "https://github.com/yaoxieyoulei/mytv-android"
+    const val APP_REPO = "https://github.com/jadehh/mytv-android"
+
+    /**
+     * GitHub加速代理地址
+     */
+    const val GITHUB_PROXY = "https://ghfast.top/"
 
     /**
      * IPTV直播源
@@ -25,12 +30,8 @@ object Constants {
     val IPTV_SOURCE_LIST = IptvSourceList(
         listOf(
             IptvSource(
-                name = "默认直播源 fanmingming（IPV6）",
-                url = "https://ghp.ci/https://raw.githubusercontent.com/wwb521/live/main/tv.m3u",
-            ),
-            IptvSource(
-                name = "默认直播源 yuanzl77（IPV4/IPV6）",
-                url = "https://ghp.ci/https://raw.githubusercontent.com/yuanzl77/IPTV/main/live.m3u",
+                name = "默认直播源 Jade",
+                url =  GITHUB_PROXY + "https://raw.githubusercontent.com/jadehh/iptv-api/refs/heads/master/output/IPTV.m3u",
             ),
         )
     )
@@ -65,14 +66,9 @@ object Constants {
      * Git最新版本信息
      */
     val GIT_RELEASE_LATEST_URL = mapOf(
-        "stable" to "https://ghp.ci/https://raw.githubusercontent.com/yaoxieyoulei/mytv-android-update/main/tv-stable.json",
-        "beta" to "https://ghp.ci/https://raw.githubusercontent.com/yaoxieyoulei/mytv-android-update/main/tv-beta.json",
+        "stable" to  GITHUB_PROXY + "https://raw.githubusercontent.com/jadehh/mytv-android/next/tv-stable.json",
+        "beta" to GITHUB_PROXY + "https://raw.githubusercontent.com/jadehh/mytv-android/next/tv-beta.json",
     )
-
-    /**
-     * GitHub加速代理地址
-     */
-    const val GITHUB_PROXY = "https://ghp.ci/"
 
     /**
      * HTTP请求重试次数
