@@ -43,6 +43,7 @@ jobs:
 
       - name: Show Output
         run: |
+          cd mytv-android
           find app -type f
       - name: Get Commit Messages
         id: get_git_latest_message
