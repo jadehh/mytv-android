@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    name: Build On:(${{ matrix.os }},framework:${{ matrix.framework}})
+    name: Build On:(${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     env:
       TZ: Asia/Shanghai
@@ -18,10 +18,7 @@ jobs:
       fail-fast: false
       matrix:
         os: ["ubuntu-latest"]
-        framework: [ "assembleLeanbackJavaArm64_v8aRelease",
-                     "assembleLeanbackJavaArmeabi_v7aRelease",
-                     "assembleMobileJavaArm64_v8aRelease",
-                     "assembleMobileJavaArmeabi_v7aRelease" ]
+
     steps:
       - name: Checkout sources
         uses: actions/checkout@v4
@@ -42,7 +39,7 @@ jobs:
       - name: Build with Gradle
         run: |
           cd mytv-android
-          bash gradlew ${{ matrix.framework}}
+          bash gradlew
 
       - name: Get Commit Messages
         id: get_git_latest_message
