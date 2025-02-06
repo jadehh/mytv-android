@@ -37,5 +37,7 @@ data class Channel(
             ),
             logo = "https://live.fanmingming.com/tv/CCTV1.png"
         )
+
+        val a = Channel()
     }
 }

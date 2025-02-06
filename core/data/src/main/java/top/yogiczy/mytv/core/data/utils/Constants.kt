@@ -26,7 +26,7 @@ object Constants {
         listOf(
             IptvSource(
                 name = "默认直播源 fanmingming（IPV6）",
-                url = "https://live.fanmingming.com/tv/m3u/ipv6.m3u",
+                url = "https://ghp.ci/https://raw.githubusercontent.com/wwb521/live/main/tv.m3u",
             ),
             IptvSource(
                 name = "默认直播源 yuanzl77（IPV4/IPV6）",
