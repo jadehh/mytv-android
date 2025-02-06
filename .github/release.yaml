@@ -22,21 +22,13 @@ jobs:
                      "assembleLeanbackJavaArmeabi_v7aRelease",
                      "assembleMobileJavaArm64_v8aRelease",
                      "assembleMobileJavaArmeabi_v7aRelease" ]
-    #        framework: ["assembleLeanbackJavaArm64_v8aRelease",
-    #                    "assembleLeanbackJavaArmeabi_v7aRelease",
-    #                    "assembleLeanbackPythonArm64_v8aRelease",
-    #                    "assembleLeanbackPythonArmeabi_v7aRelease",
-    #                    "assembleMobileJavaArm64_v8aRelease",
-    #                    "assembleMobileJavaArmeabi_v7aRelease",
-    #                    "assembleMobilePythonArm64_v8aRelease",
-    #                    "assembleMobilePythonArmeabi_v7aRelease"]
     steps:
       - name: Checkout sources
         uses: actions/checkout@v4
         with:
-          repository: jadehh/FongMiTV
-          ref: release
-          path: tv
+          repository: jadehh/mytv-android
+          ref: next
+          path: mytv-android
 
       - name: Setup Java
         uses: actions/setup-java@v3
@@ -44,18 +36,6 @@ jobs:
           distribution: temurin
           java-version: 18
 
-
-      - name: Checkout Publish sources
-        uses: actions/checkout@v4
-        with:
-          repository: jadehh/mytv-android
-          ref: next
-          path: code
-
-      - name: Edit gradle
-        run: |
-          cd code 
-          python build.py --version ${{ github.ref_name }}
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
 
@@ -63,6 +43,7 @@ jobs:
         run: |
           cd mytv-android
           bash gradlew ${{ matrix.framework}}
+
       - name: Get Commit Messages
         id: get_git_latest_message
         run: |
